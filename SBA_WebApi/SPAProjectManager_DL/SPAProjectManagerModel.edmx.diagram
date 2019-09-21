@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3ade12e705184e8882512af07b41e3ee" Name="Diagram1" ZoomLevel="65">
+        <EntityTypeShape EntityType="SPAProjectManagerModel.Project" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPAProjectManagerModel.Task" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPAProjectManagerModel.User" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
+        <AssociationConnector Association="SPAProjectManagerModel.FK__Task__Project_ID__15502E78" ManuallyRouted="false" />
+        <AssociationConnector Association="SPAProjectManagerModel.FK__Users__Project_I__182C9B23" ManuallyRouted="false" />
+        <AssociationConnector Association="SPAProjectManagerModel.FK__Users__Task_ID__1920BF5C" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="SPAProjectManagerModel.Parent_Task" Width="1.5" PointX="0.75" PointY="5.875" />
+        <AssociationConnector Association="SPAProjectManagerModel.FK__Task__Parent_ID__47DBAE45" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
