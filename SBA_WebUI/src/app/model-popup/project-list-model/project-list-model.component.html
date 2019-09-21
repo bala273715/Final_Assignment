@@ -1,0 +1,26 @@
+<div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+          <h4 class="modal-title">Project List:</h4>
+        <button type="button" class="close" (click)="close()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div>
+          <input type="text" class="form-control" (input)="filterItem()" [(ngModel)]="searchText" style="display: inline;"
+            placeholder="Search...">
+        </div>
+        <br/>
+        <div *ngFor="let project of filteredList index as i; odd as isOdd; even as isEven"
+        [class.odd]="isOdd" 
+      [class.even]="isEven">
+          <input type="text" class="form-control" style="width: 80%; margin-left: 1%;" disabled value={{project.Project}}>
+          <button class="btn btn-primary" (click)="SelectProject(project)" style="width: 15%; margin-left: 1%;background-color:blue">Select</button>
+        </div>
+  
+        <div *ngIf="projectListCount==0">
+          <label>There are no Projects</label>
+        </div>
+      </div>
+    </div>
+  </div>
+  

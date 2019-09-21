@@ -1,0 +1,30 @@
+<div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+          <h4 class="modal-title">Users List:</h4>
+        <button type="button" class="close" (click)="close()">&times;</button>
+       
+      </div>
+      <div class="modal-body">
+        <div>
+          <input type="text" class="form-control" (input)="filterItem()" [(ngModel)]="searchText" style="display: inline;"
+            placeholder="Search...">
+        </div>
+        <br />
+        <div *ngFor="let user of filteredList index as i; odd as isOdd; even as isEven"
+        [class.odd]="isOdd" 
+      [class.even]="isEven">
+          <input type="text" class="form-control" style="width: 25%;  margin-left: 1%;" disabled value={{user.FirstName}}>
+          <input type="text" class="form-control" style="width: 25%; margin-left: 1%;" disabled value={{user.LastName}}>
+          <input type="text" class="form-control" style="width: 25%; margin-left: 1%;" disabled value={{user.EmployeeID}}>
+  
+          <button class="btn btn-primary" (click)="SelectUser(user)" style="width: 15%; margin-left: 1%;background-color:blue">Select</button>
+        </div>
+  
+        <div *ngIf="userListCount==0">
+          <label>There are no users</label>
+        </div>
+      </div>
+    </div>
+  </div>
+  

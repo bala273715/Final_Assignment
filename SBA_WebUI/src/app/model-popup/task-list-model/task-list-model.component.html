@@ -1,0 +1,26 @@
+<div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+          <h4 class="modal-title">Parent Task List:</h4>
+        <button type="button" class="close" (click)="close()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div>
+          <input type="text" style="background-color:blue" class="form-control" (input)="filterItem()" [(ngModel)]="searchText" style="display: inline;"
+            placeholder="Search...">
+        </div>
+        <br/>
+        <div *ngFor="let task of filteredList index as i; odd as isOdd; even as isEven"
+        [class.odd]="isOdd" 
+      [class.even]="isEven">
+          <input type="text" class="form-control" style="width: 80%; margin-left: 1%;" disabled value={{task.ParentTask}}>
+          <button class="btn btn-primary" (click)="SelectTask(task)" style="width: 15%; margin-left: 1%;background-color:blue">Select</button>
+        </div>
+  
+        <div *ngIf="parentTaskListCount==0">
+          <label>There are no Parent tasks</label>
+        </div>
+      </div>
+    </div>
+  </div>
+  
